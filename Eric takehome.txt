@@ -1,0 +1,85 @@
+Problem
+Given a description string, and 2 search strings, find a substring that starts with one of the keywords, and ends with another keyword.
+Some clarifications we had:
+# if not found, return “”
+# if more than 1 possible result, return the shortest one 
+# shortest of words
+# shortestStr 
+# Start with 1 of the keyword, end with another 1
+# casing? To simplify, assume all input is in lower case
+# Assume Input is always 2 keywords
+# Assume kw1 kw2 always exist  ⇐ For this exercise, change it to:
+If (kw1/kw2/ or both) do not exist in description, return “”
+
+
+Example usage
+Consider writing unit tests based on input & output.
+1)
+Description: “Today we are talking about coding with Java. Also want to talk about python. But I like Java more.”
+keyword1: “java”
+keyword2: “python”
+expected result: “python. But I like Java”
+
+
+2) 
+Description: “Someone needs help with HTML and CSS. I am okay with that.”
+keyword1: “with”
+keyword2: “CSS”
+expected result: “with HTML and CSS”
+
+
+3)
+Description: “Someone needs help with HTML and CSS. I am okay with that.”
+keyword1: “with”
+keyword2: “Javascript”
+expected result: “”
+
+
+
+
+And any other example cases you can think of.
+
+
+Questions to answer about your code
+1. For each method, please briefly state the big O runtime complexity.
+Extensions
+If you can complete the original problem quickly, please try these extensions:
+(If you do submit answers for extensions, please submit 1 file for the original problem, 1 file for each extension you completed. You can still submit your answers if you didn’t fully finish #1 or #2)
+Extension #1
+Usually you would simply use the description string, or maybe split it into an array of words. For this extension, let's think about moving some code to the constructor.
+
+
+Suppose description is given to you (by the constructor) once, then “get_snippet()” is called many times with different input keywords. Could you do a little bit of processing in the constructor to improve the runtime of get_snippet()?
+
+
+Please briefly explain the difference in runtime of get_snippet(), before & after your change.
+Extension #2
+We want to get the substring, and also 3 words before & 3 words after.
+
+
+Example:
+Description: “I know someone needs help with HTML and CSS. I am okay with that.”
+keyword1: “with”
+keyword2: “CSS”
+original result: “with HTML and CSS”
+new expected result: “someone needs help with HTML and CSS. I am okay”
+
+
+The yellow highlighted part is the “3 words before” and “3 words after” part.
+
+
+If there are less than 3 words available before or after, get as close to 3 words as possible.
+Example:
+Description: “I know someone needs help with HTML and CSS please”
+keyword1: “with”
+keyword2: “CSS”
+original result: “with HTML and CSS”
+new expected result: “someone needs help with HTML and CSS please”
+
+
+Extension #3 (Bonus)
+Note: This is a difficult one, so feel free to skip it. Attempt this only if you feel super confident about #1 & #2.
+Also we don’t expect you to write any code for this. If you are interested, you can also submit without #3, and try this after your submission of original, #1 & #2.
+
+
+What changes do we need to make, if get_snippet() accepts an array of keywords (instead of always 2 keywords)? Please briefly describe.
